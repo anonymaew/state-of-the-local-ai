@@ -1,0 +1,36 @@
+- dataset:
+    id: LocalLLaMA/typed-decisions
+    task_id: accuracy
+  value: 0.701
+  source:
+    url: https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+    name: Typed Decisions leaderboard (README)
+    user: LocalLLaMA
+  notes: "General model (any question schema at request time), not fitted by us on this benchmark's train split. Scored on the full 400-case test split (2,000 decisions): one request per case with all five questions, text only, the benchmark's own metrics, MLX on an Apple M3 Max."
+- dataset:
+    id: LocalLLaMA/typed-decisions
+    task_id: kl_from_gold
+  value: 0.2126
+  source:
+    url: https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+    name: Typed Decisions leaderboard (README)
+    user: LocalLLaMA
+  notes: "General model (any question schema at request time), not fitted by us on this benchmark's train split. Scored on the full 400-case test split (2,000 decisions): one request per case with all five questions, text only, the benchmark's own metrics, MLX on an Apple M3 Max."
+- dataset:
+    id: LocalLLaMA/typed-decisions
+    task_id: brier
+  value: 0.1104
+  source:
+    url: https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+    name: Typed Decisions leaderboard (README)
+    user: LocalLLaMA
+  notes: "General model (any question schema at request time), not fitted by us on this benchmark's train split. Scored on the full 400-case test split (2,000 decisions): one request per case with all five questions, text only, the benchmark's own metrics, MLX on an Apple M3 Max."
+- dataset:
+    id: LocalLLaMA/typed-decisions
+    task_id: ece
+  value: 0.1204
+  source:
+    url: https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+    name: Typed Decisions leaderboard (README)
+    user: LocalLLaMA
+  notes: "General model (any question schema at request time), not fitted by us on this benchmark's train split. Scored on the full 400-case test split (2,000 decisions): one request per case with all five questions, text only, the benchmark's own metrics, MLX on an Apple M3 Max."

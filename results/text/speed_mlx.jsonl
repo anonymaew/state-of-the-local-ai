@@ -1,0 +1,5 @@
+{"engine": "mlx-lm", "prompt_tokens": 111, "gen_tokens": 128, "prompt_tps": 163.2, "gen_tps": 214.4, "wall_s": 1.3, "peak_mem_gb": 0.65, "label": "tiny-qwen3.5-0.8b-mlx4bit", "target_depth": 64, "load_s": 0.7}
+{"engine": "mlx-lm", "prompt_tokens": 1046, "gen_tokens": 128, "prompt_tps": 3843.6, "gen_tps": 211.8, "wall_s": 0.9, "peak_mem_gb": 1.46, "label": "tiny-qwen3.5-0.8b-mlx4bit", "target_depth": 1024, "load_s": 0.7}
+{"engine": "mlx-lm", "prompt_tokens": 111, "gen_tokens": 128, "prompt_tps": 123.4, "gen_tps": 7.2, "wall_s": 18.8, "peak_mem_gb": 15.6, "label": "qwen38-27b-mlx4bit", "target_depth": 64, "load_s": 3.7}
+{"engine": "mlx-lm", "prompt_tokens": 4126, "gen_tokens": 1, "prompt_tps": 149.2, "gen_tps": 43478.3, "wall_s": 27.7, "peak_mem_gb": 18.27, "label": "qwen38-27b-mlx4bit", "target_depth": 4096, "load_s": 3.7}
+{"engine": "mlx-lm", "prompt_tokens": 16391, "gen_tokens": 1, "prompt_tps": 128.7, "gen_tps": 28368.8, "wall_s": 127.4, "peak_mem_gb": 19.07, "label": "qwen38-27b-mlx4bit", "target_depth": 16384, "load_s": 3.7}

@@ -1,0 +1,308 @@
+{
+  "manifest_version": 1,
+  "created": "2026-10-26",
+  "description": "Decision-model (System One) item-set manifest. Resolved by benchmarks/decision/load_suite.py into normalized JSONL items {id, state, questions, gold, meta}. No network at research time: every pinned hash below was copied from a file on disk (src/kev/evals/breadth-v1/manifest.json), not from the Hub.",
+  "seed": 20261026,
+  "cache": "${DATA}/cache",
+  "primary": "breadth-v1-dev",
+  "budget": {
+    "wall_clock_target_s": 1800,
+    "assumed_prefill_tokens_per_second": 90,
+    "max_total_state_tokens": 150000,
+    "chars_per_token_estimate": 4.0,
+    "note": "assumed_prefill_tokens_per_second is an assumption, not a measurement: no Kev prefill rate on this machine exists in the repo (README measures 721 ms / 5 questions and 136 ms cached for Kev-4B on an M5, state length unstated). The cap below is sized so that 150k state tokens / 90 tok/s = 27 min <= the 30 min target. Re-derive after the first dry run; item caps are part of the label, so changing them starts a new series."
+  },
+  "suites": {
+    "breadth-v1-dev": {
+      "kind": "frozen-kev-suite",
+      "suite": "breadth-v1",
+      "split": "development",
+      "locked": false,
+      "repo_path": "src/kev/evals/breadth-v1",
+      "partition": "development.jsonl",
+      "provenance": {
+        "sha256": "9aad8f4a7374988b2768d31135d5690137df3a3d6cbc1e771db4ee95ca515a94",
+        "bytes": 5032194,
+        "records": 1990,
+        "questions": 3075,
+        "sha256_source": "src/kev/evals/breadth-v1/manifest.json -> files.development.jsonl (CI-verified against committed report docs/claims.json)",
+        "mirror_dataset": "jaredpalmer/kev-private-evals",
+        "mirror_revision": "aeaaed0f7532509608a23140130e389baac94f91",
+        "mirror_private": true,
+        "fallback_dataset": "jaredpalmer/kev-suites",
+        "fallback_revision": "cc4bac803e73112689ec327ffa481c519cbc7a05",
+        "fallback_status": "UNVERIFIED for breadth-v1: its manifest names the private mirror instead, so this path is expected to 404 and must fail loudly rather than silently substitute another file"
+      },
+      "datasets": [
+        {
+          "name": "musr",
+          "area": "knowledge",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "sata_bench",
+          "area": "knowledge",
+          "metric": "case_exact",
+          "cap_records": 6
+        },
+        {
+          "name": "chessbench",
+          "area": "knowledge",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "contractnli",
+          "area": "language",
+          "metric": "accuracy",
+          "cap_records": 3
+        },
+        {
+          "name": "hellaswag",
+          "area": "language",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "clinc150",
+          "area": "retrieval",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "sgd",
+          "area": "retrieval",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "bright",
+          "area": "retrieval",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "bfcl",
+          "area": "tools",
+          "metric": "case_exact",
+          "cap_records": 6
+        },
+        {
+          "name": "toolret",
+          "area": "tools",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "apibank",
+          "area": "tools",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "routerbench",
+          "area": "tools",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "humicroedit",
+          "area": "arts",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "cfcolor",
+          "area": "arts",
+          "metric": "accuracy",
+          "cap_records": 6
+        }
+      ],
+      "estimated": {
+        "records": 81,
+        "questions": 128,
+        "state_tokens": 95000
+      },
+      "notes": "Development split only. The test split is locked (read once per candidate, never for search); the development split is what every published Kev model was selected on and what a local quant/engine sweep must use."
+    },
+    "breadth-v1-test": {
+      "kind": "frozen-kev-suite",
+      "suite": "breadth-v1",
+      "split": "test",
+      "locked": true,
+      "repo_path": "src/kev/evals/breadth-v1",
+      "partition": "test.jsonl",
+      "provenance": {
+        "sha256": "91a64f0a9448dcaece421c051a4b3fd079c15b84ea6cb9cfa8155237d8d1fa18",
+        "bytes": 5127662,
+        "records": 1990,
+        "questions": 3089,
+        "sha256_source": "src/kev/evals/breadth-v1/manifest.json -> files.test.jsonl",
+        "mirror_dataset": "jaredpalmer/kev-private-evals",
+        "mirror_revision": "aeaaed0f7532509608a23140130e389baac94f91",
+        "mirror_private": true
+      },
+      "datasets": [
+        {
+          "name": "musr",
+          "area": "knowledge",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "sata_bench",
+          "area": "knowledge",
+          "metric": "case_exact",
+          "cap_records": 6
+        },
+        {
+          "name": "chessbench",
+          "area": "knowledge",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "contractnli",
+          "area": "language",
+          "metric": "accuracy",
+          "cap_records": 3
+        },
+        {
+          "name": "hellaswag",
+          "area": "language",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "clinc150",
+          "area": "retrieval",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "sgd",
+          "area": "retrieval",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "bright",
+          "area": "retrieval",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "bfcl",
+          "area": "tools",
+          "metric": "case_exact",
+          "cap_records": 6
+        },
+        {
+          "name": "toolret",
+          "area": "tools",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "apibank",
+          "area": "tools",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "routerbench",
+          "area": "tools",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "humicroedit",
+          "area": "arts",
+          "metric": "accuracy",
+          "cap_records": 6
+        },
+        {
+          "name": "cfcolor",
+          "area": "arts",
+          "metric": "accuracy",
+          "cap_records": 6
+        }
+      ],
+      "notes": "Headline numbers only, one read per candidate. Requires --allow-test. Same caps as development so the two are the same design, not the same items."
+    },
+    "smoke": {
+      "kind": "local-jsonl",
+      "split": "smoke",
+      "locked": false,
+      "repo_path": "data/decision/smoke.jsonl",
+      "provenance": {
+        "sha256": null,
+        "sha256_source": "unpinned: computed and printed on first load, pin after review"
+      },
+      "purpose": "harness plumbing only. Never reported as a score. 20 handwritten items exercising choice K=2/8/255, noul, score L=3/5, option-order invariance pairs, and a ~6k-token state.",
+      "datasets": [
+        {
+          "name": "smoke",
+          "area": "plumbing",
+          "metric": "accuracy",
+          "cap_records": 20
+        }
+      ],
+      "suite": "smoke"
+    },
+    "typed-decisions": {
+      "kind": "frozen-public-benchmark",
+      "dataset": "LocalLLaMA/typed-decisions",
+      "config": "all",
+      "split": "test",
+      "locked": false,
+      "local_parquet": "data/decision/cache/typed-decisions/all/test-00000-of-00001.parquet",
+      "records": 400,
+      "decisions": 2000,
+      "questions_per_case": 5,
+      "metrics": [
+        "accuracy",
+        "kl_from_gold",
+        "brier",
+        "ece"
+      ],
+      "scorer": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions/raw/main/bench/score_with_jobs.py",
+      "notes": "Chosen primary for the 9B comparison: every candidate publishes a zero-shot number on this exact split (clef-flash 0.710, d3-flash 0.717, amos-1-medium 0.765, Jev 0.727), it is 1 MB, and its official scorer fixes the metric definitions. breadth-v1 stays as the secondary Kev-native panel; the two are NOT comparable."
+    }
+  },
+  "validity": {
+    "label": "one row per measurement carries suite, split, item-set sha256, item cap and seed; a change to any of them is a new label, not a new row in an existing series",
+    "temperature": "record the served temperature and whether it is the checkpoint's shipped value or fitted here; accuracy is temperature-invariant, Brier/ECE/NLL are not",
+    "no_fitting_on_test": "temperature and any threshold are fitted on development (or out-of-fold), never on the scored split",
+    "readout": "probabilities must come from the same read-out path within a series (pointer head or logprob); swapping read-out mid-series invalidates it"
+  },
+  "reporting": {
+    "per_item": [
+      "accuracy_of_top1",
+      "brier_multiclass",
+      "ece_10_equal_width_bins",
+      "nll",
+      "confidence",
+      "latency_ms",
+      "state_tokens"
+    ],
+    "per_dataset": [
+      "score",
+      "chance",
+      "skill",
+      "answered_share",
+      "ece",
+      "brier",
+      "nll"
+    ],
+    "aggregate": [
+      "index = 100 * mean of 5 area skills",
+      "area_skill = mean of its datasets' skills",
+      "skill = clip((score - chance) / (1 - chance), 0, 1)",
+      "record_clustered_bootstrap_ci95"
+    ],
+    "spec": "docs/11-decision-eval.md"
+  },
+  "primary_for_9b": "typed-decisions"
+}

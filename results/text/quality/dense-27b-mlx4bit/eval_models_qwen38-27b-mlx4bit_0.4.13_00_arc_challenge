@@ -1,0 +1,11 @@
+{
+    "arc_challenge": {
+        "name": "arc_challenge",
+        "alias": "arc_challenge",
+        "sample_len": 300,
+        "acc,none": 0.44333333333333336,
+        "acc_stderr,none": 0.028729443073160024,
+        "acc_norm,none": 0.4633333333333333,
+        "acc_norm_stderr,none": 0.028837890554337213
+    }
+}

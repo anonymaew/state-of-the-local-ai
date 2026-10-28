@@ -1,0 +1,4 @@
+{"tag": "dense-27b-mlx4bit_arc_challenge", "task": "arc_challenge", "n": 300, "acc": 0.4433, "acc_stderr": 0.0287, "acc_norm": 0.4633, "acc_norm_stderr": 0.0288}
+{"tag": "dense-27b-mlx4bit_truthfulqa_mc2", "task": "truthfulqa_mc2", "n": 300, "acc": 0.5992, "acc_stderr": 0.0255}
+{"tag": "moe-35b-a3b-mlx4bit_arc_challenge", "task": "arc_challenge", "n": 300, "acc": 0.4033, "acc_stderr": 0.0284, "acc_norm": 0.4067, "acc_norm_stderr": 0.0284}
+{"tag": "moe-35b-a3b-mlx4bit_truthfulqa_mc2", "task": "truthfulqa_mc2", "n": 300, "acc": 0.57, "acc_stderr": 0.0251}

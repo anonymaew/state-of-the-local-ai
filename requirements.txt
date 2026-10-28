@@ -1,0 +1,11 @@
+# Python 3.12 (the versions below are the ones every published row was measured with).
+#   uv venv --python 3.12 .venv && uv pip install -r requirements.txt
+#   # or: python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
+mlx==0.32.4
+mlx-lm==0.32.2
+mlx-vlm==0.7.9
+mlx-audio==0.6.1
+lm-eval[api,ifeval,math]==0.4.13
+huggingface-hub==2.2.0
+datasets==5.1.0
+numpy==2.5.4

@@ -1,0 +1,5 @@
+# oMLX lives in its own venv: omlx 0.7.1 pins mlx-lm < 0.32, while the main .venv is on 0.32.2.
+# Only the text track's speed-first comparison needs this (docs/text/05-recommendation.md).
+#   uv venv --python 3.12 .venv-omlx && uv pip install -r requirements-omlx.txt
+omlx==0.7.1
+mlx-embeddings==0.1.0

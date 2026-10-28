@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+*.jsonl text
+*.md text
+*.sh text eol=lf
+*.parquet binary
+*.png binary
+*.gguf binary
+*.safetensors binary

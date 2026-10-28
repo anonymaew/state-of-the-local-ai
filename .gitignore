@@ -1,0 +1,36 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Virtualenvs
+.venv/
+.venv-*/
+venv/
+
+# Weights live in the Hugging Face cache; models/README.md is the registry
+models/*
+!models/README.md
+*.gguf
+*.safetensors
+*.npz
+
+# Engine source is cloned and built, not vendored (see src/README.md)
+src/*
+!src/README.md
+
+# Raw logs are evidence locally, not something to commit in bulk
+logs/**
+!logs/README.md
+
+# Dataset bytes are fetched, not redistributed (provenance in data/*/README.md)
+data/*/cache/
+data/text/wiki.test.raw
+data/text/wiki_test.parquet
+
+# Caches
+.ruff_cache/
+.pytest_cache/
+**/__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,1 @@
+Explain how unified memory bandwidth limits token generation speed in local LLMs. Give concrete numbers and a worked example.

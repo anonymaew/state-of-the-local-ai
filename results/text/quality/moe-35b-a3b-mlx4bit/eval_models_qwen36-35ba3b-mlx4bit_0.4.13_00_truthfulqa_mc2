@@ -1,0 +1,9 @@
+{
+    "truthfulqa_mc2": {
+        "name": "truthfulqa_mc2",
+        "alias": "truthfulqa_mc2",
+        "sample_len": 300,
+        "acc,none": 0.5700028538695477,
+        "acc_stderr,none": 0.02514182755134658
+    }
+}

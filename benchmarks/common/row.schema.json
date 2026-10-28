@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local-llm.invalid/row.schema.json",
+  "title": "Benchmark result row",
+  "description": "One line in results/<modality>/<harness>.jsonl: one measurement, one process, one model load.",
+  "type": "object",
+  "required": ["modality", "task", "engine", "model", "label", "ts", "valid", "metrics"],
+  "additionalProperties": true,
+  "properties": {
+    "modality": {
+      "enum": ["text", "image", "video", "audio", "speech", "decision"]
+    },
+    "task": {
+      "type": "string",
+      "examples": ["decode", "prefill", "ppl", "image-qa", "txt2img", "video-qa", "txt2video", "music", "asr", "tts", "tool-call"]
+    },
+    "engine": {
+      "type": "string",
+      "examples": ["llama.cpp", "mlx-lm", "mlx-vlm", "mlx-audio", "oMLX", "whisper.cpp"]
+    },
+    "model": {
+      "type": "string",
+      "description": "Model directory or repo id, including the quant."
+    },
+    "label": {
+      "type": "string",
+      "description": "Free-form config tag; the parameters that change the number."
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid": {
+      "type": "boolean",
+      "description": "Passes the validity gates in docs/text/02-benchmark-plan.md. Invalid rows stay in the file."
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Modality-owned numbers. Units belong in the key name.",
+      "additionalProperties": {
+        "type": ["number", "integer", "string", "boolean", "null"]
+      }
+    },
+    "harness": {
+      "type": "object",
+      "description": "Versions, flags, and machine state (load, swap, thermal).",
+      "additionalProperties": true
+    }
+  }
+}
